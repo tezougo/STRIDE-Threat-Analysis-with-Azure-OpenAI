@@ -1,0 +1,120 @@
+{
+  "threat_model": [
+    {
+      "Threat Type": "Spoofing",
+      "Scenario": "Atacante pode interceptar ou roubar tokens JWT se não forem armazenados de forma segura no cliente",
+      "Potential Impact": "Acesso não autorizado à conta do usuário e seus dados pessoais"
+    },
+    {
+      "Threat Type": "Spoofing",
+      "Scenario": "Credenciais de autenticação OAuth 2.0 podem ser comprometidas através de phishing",
+      "Potential Impact": "Roubo de identidade e acesso completo aos recursos do usuário"
+    },
+    {
+      "Threat Type": "Spoofing",
+      "Scenario": "Falta de validação adequada de origem pode permitir ataques CSRF",
+      "Potential Impact": "Execução de ações não autorizadas em nome do usuário"
+    },
+    {
+      "Threat Type": "Tampering",
+      "Scenario": "Dados podem ser modificados em trânsito se HTTPS não estiver corretamente configurado",
+      "Potential Impact": "Corrupção de dados e possível execução de código malicioso"
+    },
+    {
+      "Threat Type": "Tampering",
+      "Scenario": "Parâmetros de requisição podem ser manipulados para alterar comportamento da aplicação",
+      "Potential Impact": "Bypass de regras de negócio e acesso a funcionalidades restritas"
+    },
+    {
+      "Threat Type": "Tampering",
+      "Scenario": "Dados no banco podem ser alterados através de SQL Injection se inputs não forem validados",
+      "Potential Impact": "Perda de integridade dos dados e possível comprometimento do banco"
+    },
+    {
+      "Threat Type": "Repudiation",
+      "Scenario": "Usuário pode negar ações realizadas se não houver logging adequado de eventos críticos",
+      "Potential Impact": "Impossibilidade de rastrear atividades maliciosas ou fraudulentas"
+    },
+    {
+      "Threat Type": "Repudiation",
+      "Scenario": "Falta de assinatura digital em transações críticas permite negação de ações",
+      "Potential Impact": "Disputas sobre transações realizadas e impossibilidade de prova"
+    },
+    {
+      "Threat Type": "Repudiation",
+      "Scenario": "Logs de auditoria podem ser deletados se não protegidos adequadamente",
+      "Potential Impact": "Perda de evidências para investigação de incidentes"
+    },
+    {
+      "Threat Type": "Information Disclosure",
+      "Scenario": "Mensagens de erro detalhadas podem expor informações sobre a estrutura do sistema",
+      "Potential Impact": "Facilitação de ataques direcionados baseados em informações técnicas expostas"
+    },
+    {
+      "Threat Type": "Information Disclosure",
+      "Scenario": "APIs podem expor mais dados do que necessário em suas respostas",
+      "Potential Impact": "Vazamento de dados pessoais e informações sensíveis de outros usuários"
+    },
+    {
+      "Threat Type": "Information Disclosure",
+      "Scenario": "Configurações e credenciais podem ser expostas em código-fonte ou repositórios públicos",
+      "Potential Impact": "Comprometimento total do sistema através de credenciais expostas"
+    },
+    {
+      "Threat Type": "Denial of Service",
+      "Scenario": "API pode ser sobrecarregada com requisições massivas sem rate limiting",
+      "Potential Impact": "Indisponibilidade do serviço para usuários legítimos"
+    },
+    {
+      "Threat Type": "Denial of Service",
+      "Scenario": "Consultas complexas ao banco podem esgotar recursos sem timeout ou limite",
+      "Potential Impact": "Degradação severa de performance ou travamento do sistema"
+    },
+    {
+      "Threat Type": "Denial of Service",
+      "Scenario": "Upload de arquivos grandes sem validação pode esgotar armazenamento",
+      "Potential Impact": "Esgotamento de recursos de disco e indisponibilidade do serviço"
+    },
+    {
+      "Threat Type": "Elevation of Privilege",
+      "Scenario": "Vulnerabilidades em validação de autorização podem permitir acesso a recursos de outros usuários",
+      "Potential Impact": "Acesso não autorizado a dados e funcionalidades administrativas"
+    },
+    {
+      "Threat Type": "Elevation of Privilege",
+      "Scenario": "Falhas em validação de input podem permitir injeção de código (XSS, SQL Injection)",
+      "Potential Impact": "Execução de código arbitrário e comprometimento do sistema"
+    },
+    {
+      "Threat Type": "Elevation of Privilege",
+      "Scenario": "Manipulação de tokens pode permitir escalar privilégios se não houver verificação adequada",
+      "Potential Impact": "Obtenção de privilégios administrativos e controle total do sistema"
+    }
+  ],
+  "improvement_suggestions": [
+    "Forneça detalhes sobre a implementação de TLS/SSL e versões suportadas nos endpoints",
+    "Descreva o mecanismo de rotação, expiração e revogação de tokens JWT implementado",
+    "Especifique a estratégia de logging e auditoria, incluindo quais eventos são registrados",
+    "Detalhe as configurações de rate limiting, throttling e proteção contra DDoS",
+    "Informe sobre os mecanismos de validação e sanitização de inputs implementados",
+    "Descreva o modelo de autorização e controle de acesso (RBAC, ABAC) utilizado",
+    "Especifique como as senhas são armazenadas (algoritmo de hash, salt, etc.)",
+    "Detalhe os mecanismos de proteção contra CSRF e XSS implementados",
+    "Informe sobre backups e estratégias de recuperação de desastres",
+    "Descreva o processo de gestão de segredos e credenciais (uso de vaults, etc.)"
+  ],
+  "summary": {
+    "total_threats": 18,
+    "threats_by_type": {
+      "Spoofing": 3,
+      "Tampering": 3,
+      "Repudiation": 3,
+      "Information Disclosure": 3,
+      "Denial of Service": 3,
+      "Elevation of Privilege": 3
+    },
+    "application_type": "Aplicação Web SPA",
+    "has_internet_access": "Sim",
+    "authentication_method": "OAuth 2.0 + JWT"
+  }
+}

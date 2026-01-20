@@ -1,0 +1,68 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "name": {
+      "value": "seu-recurso-openai"
+    },
+    "location": {
+      "value": "brazilsouth"
+    },
+    "sku": {
+      "value": "Standard_S0"
+    },
+    "tagValues": {
+      "value": {
+        "Microsoft.CognitiveServices/accounts": {
+          "project": "stride-threat-analysis",
+          "environment": "dev",
+          "owner": "Seu Nome"
+        }
+      }
+    },
+    "virtualNetworkType": {
+      "value": "External"
+    },
+    "vnet": {
+      "value": {
+        "newOrExisting": "existing",
+        "name": "sua-vnet",
+        "resourceGroup": "seu-resource-group",
+        "addressPrefixes": [
+          "172.16.0.0/16"
+        ],
+        "subnets": {
+          "subnet": {
+            "name": "sua-subnet",
+            "addressPrefix": "172.16.0.0/26"
+          }
+        }
+      }
+    },
+    "ipRules": {
+      "value": [
+        {
+          "value": "SEU.IP.PUBLICO.AQUI/32"
+        }
+      ]
+    },
+    "privateEndpoints": {
+      "value": []
+    },
+    "privateDnsZone": {
+      "value": "privatelink.cognitiveservices.azure.com"
+    },
+    "resourceGroupName": {
+      "value": "openai-analise-ameaças-STRIDE"
+    },
+    "resourceGroupId": {
+      "value": "/subscriptions/<SUBSCRIPTION_ID>/resourceGroups/openai-analise-ameaças-STRIDE"
+    },
+    "uniqueId": {
+      "value": ""
+    },
+    "storedCompletionsDisabled": {
+      "value": false
+    }
+  }
+}
